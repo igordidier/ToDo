@@ -3,10 +3,10 @@ import trashbin from "../images/trashbin.png";
 
 const Todo = ({ todo }) => {
   return (
-    <li className="list">
+    <li className={todo.completed ? "listdone" : "list"}>
       <div className="container">
-        <input type="checkbox" />
-        <p>{todo}</p>
+        <input type="checkbox" checked={todo.completed ? "checked" : ""} />
+        <p className={todo.completed ? "textdone" : ""}>{todo.text} </p>
       </div>
       <button>
         <img src={trashbin} />
